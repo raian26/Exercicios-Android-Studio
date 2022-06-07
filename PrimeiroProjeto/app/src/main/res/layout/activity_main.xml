@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"/>
+
+    Box(
+
+
+    modifier = Modifier
+
+    .width(1080.dp)
+    .height(1920.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .background(Color(red = 1f, green = 1f, blue = 0.3803921639919281f, alpha = 0.8700000047683716f))
+    .border(1.dp, Color(red = 0f, green = 0f, blue = 0f, alpha = 1f), RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .padding(start = 0.dp, top = 0.dp, end = 0.dp, bottom = 0.dp)
+
+    .alpha(1f)
+
+
+    ) {
+
+    Box(
+    modifier = Modifier
+    .width(906.dp)
+    .height(113.dp)
+    .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .align(Alignment.TopStart)
+    .border(2.dp, Color(red = 0.5607843399047852f, green = 0.5607843399047852f, blue = 0.43921568989753723f, alpha = 0.8705999851226807f), RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .background(Color(red = 1f, green = 1f, blue = 1f, alpha = 1f))
+    )
+    Box(
+    modifier = Modifier
+    .width(906.dp)
+    .height(113.dp)
+    .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .align(Alignment.TopStart)
+    .border(2.dp, Color(red = 0.5607843399047852f, green = 0.5607843399047852f, blue = 0.43921568989753723f, alpha = 0.8705999851226807f), RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .background(Color(red = 1f, green = 1f, blue = 1f, alpha = 1f))
+    )
+    Box(
+    modifier = Modifier
+    .width(906.dp)
+    .height(113.dp)
+    .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .align(Alignment.TopStart)
+    .border(0.dp, Color(red = 0.5625f, green = 0.5625f, blue = 0.43828123807907104f, alpha = 0.8705882430076599f), RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .background(Color(red = 1f, green = 1f, blue = 1f, alpha = 1f))
+    )
+    Canvas(
+    modifier = Modifier
+    .width(435.dp)
+    .height(95.dp)
+    //.fillMaxWidth()
+    //.aspectRatio(1f)
+    .align(Alignment.TopStart)
+    ) {
+    val fillPath = PathParser.createPathFromPathData("M 0 0 L 435 0 L 435 95 L 0 95 L 0 0 Z ")
+    //fillPath.fillType = Path.FillType.EVEN_ODD
+    val rectF = RectF()
+    fillPath.computeBounds(rectF, true)
+    val matrix = Matrix()
+    val scale = minOf( size.width / rectF.width(), size.height / rectF.height() )
+    matrix.setScale(scale, scale)
+    fillPath.transform(matrix)
+    val composePathFill = fillPath.asComposePath()
+
+    drawPath(path = composePathFill, color = Color(red = 1f, green = 1f, blue = 1f, alpha = 1f), style = Fill)
+    drawPath(path = composePathFill, color = Color.Transparent, style = Stroke(width = 3f, miter = 4f, join = StrokeJoin.Round))
+    }
+
+    Text(
+    text = "Inserir Imagem",
+    textAlign = TextAlign.Start,
+    fontSize = 40.sp,
+    textDecoration = TextDecoration.None,
+    letterSpacing = 0.sp,
+
+    overflow = TextOverflow.Ellipsis,
+    modifier = Modifier
+    .align(Alignment.TopStart)
+    .width(302.dp)
+
+    //.height(60.dp)
+
+    .alpha(1f),
+    color = Color(red = 0f, green = 0f, blue = 0f, alpha = 1f),
+    fontWeight = FontWeight.Normal,
+    fontStyle = FontStyle.Normal,
+    )
+
+
+    Text(
+    text = "Nome do Produto : ",
+    textAlign = TextAlign.Center,
+    fontSize = 36.sp,
+    textDecoration = TextDecoration.None,
+    letterSpacing = 0.sp,
+
+    overflow = TextOverflow.Ellipsis,
+    modifier = Modifier
+    .align(Alignment.TopStart)
+    .width(353.dp)
+
+    //.height(69.dp)
+
+    .alpha(1f),
+    color = Color(red = 0f, green = 0f, blue = 0f, alpha = 1f),
+    fontWeight = FontWeight.Normal,
+    fontStyle = FontStyle.Normal,
+    )
+
+
+    Text(
+    text = "pontos : ",
+    textAlign = TextAlign.Center,
+    fontSize = 36.sp,
+    textDecoration = TextDecoration.None,
+    letterSpacing = 0.sp,
+
+    overflow = TextOverflow.Ellipsis,
+    modifier = Modifier
+    .align(Alignment.TopStart)
+    .width(167.dp)
+
+    //.height(51.dp)
+
+    .alpha(1f),
+    color = Color(red = 0f, green = 0f, blue = 0f, alpha = 1f),
+    fontWeight = FontWeight.Normal,
+    fontStyle = FontStyle.Normal,
+    )
+
+    Box(
+    modifier = Modifier
+    .width(78.dp)
+    .height(79.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .align(Alignment.TopStart)
+
+    .background(Color.Transparent)
+    )
+
+    Text(
+    text = "quantidade :",
+    textAlign = TextAlign.Center,
+    fontSize = 36.sp,
+    textDecoration = TextDecoration.None,
+    letterSpacing = 0.sp,
+
+    overflow = TextOverflow.Ellipsis,
+    modifier = Modifier
+    .align(Alignment.Center)
+    .width(292.dp)
+
+    //.height(66.dp)
+
+    .alpha(1f),
+    color = Color(red = 0f, green = 0f, blue = 0f, alpha = 1f),
+    fontWeight = FontWeight.Normal,
+    fontStyle = FontStyle.Normal,
+    )
+
+    Box(
+    modifier = Modifier
+    .width(78.dp)
+    .height(79.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .align(Alignment.TopStart)
+
+    .background(Color.Transparent)
+    )
+    Box(
+    modifier = Modifier
+    .width(310.dp)
+    .height(308.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .align(Alignment.TopStart)
+
+    .background(Color.Transparent)
+    )
+    Box(
+    modifier = Modifier
+    .width(96.dp)
+    .height(67.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .align(Alignment.TopStart)
+
+    .background(Color.Transparent)
+    )
+    Box(
+    modifier = Modifier
+    .width(906.dp)
+    .height(112.dp)
+    .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .align(Alignment.TopStart)
+    .border(2.dp, Color(red = 0.5607843399047852f, green = 0.5607843399047852f, blue = 0.43921568989753723f, alpha = 0.8705999851226807f), RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 20.dp, bottomEnd = 20.dp))
+    .background(Color(red = 1f, green = 1f, blue = 1f, alpha = 1f))
+    )
+    Canvas(
+    modifier = Modifier
+    .width(906.dp)
+    .height(249.00001525878906.dp)
+    //.fillMaxWidth()
+    //.aspectRatio(1f)
+    .align(Alignment.TopStart)
+    ) {
+    val fillPath = PathParser.createPathFromPathData("M 0 0 L 906 0 L 906 249.00001525878906 L 0 249.00001525878906 L 0 0 Z ")
+    //fillPath.fillType = Path.FillType.EVEN_ODD
+    val rectF = RectF()
+    fillPath.computeBounds(rectF, true)
+    val matrix = Matrix()
+    val scale = minOf( size.width / rectF.width(), size.height / rectF.height() )
+    matrix.setScale(scale, scale)
+    fillPath.transform(matrix)
+    val composePathFill = fillPath.asComposePath()
+
+    drawPath(path = composePathFill, color = Color(red = 1f, green = 1f, blue = 1f, alpha = 1f), style = Fill)
+    drawPath(path = composePathFill, color = Color(red = 0.5607843399047852f, green = 0.5607843399047852f, blue = 0.43921568989753723f, alpha = 0.8705999851226807f), style = Stroke(width = 4f, miter = 4f, join = StrokeJoin.Round))
+    }
+
+    Text(
+    text = "CATEGORIA : ",
+    textAlign = TextAlign.Start,
+    fontSize = 36.sp,
+    textDecoration = TextDecoration.None,
+    letterSpacing = 0.sp,
+
+    overflow = TextOverflow.Ellipsis,
+    modifier = Modifier
+    .align(Alignment.TopStart)
+    .width(204.dp)
+
+    //.height(62.dp)
+
+    .alpha(1f),
+    color = Color(red = 0f, green = 0f, blue = 0f, alpha = 1f),
+    fontWeight = FontWeight.Normal,
+    fontStyle = FontStyle.Normal,
+    )
+
+    Box(
+    modifier = Modifier
+    .width(189.dp)
+    .height(190.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .align(Alignment.TopStart)
+    .border(0.dp, Color(red = 0f, green = 0f, blue = 0f, alpha = 1f), RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .background(Color.Transparent)
+    )
+    Canvas(
+    modifier = Modifier
+    .width(743.dp)
+    .height(98.dp)
+    //.fillMaxWidth()
+    //.aspectRatio(1f)
+    .align(Alignment.TopStart)
+    ) {
+    val fillPath = PathParser.createPathFromPathData("M 0 0 L 371.5 0 L 743 0 L 743 98 L 371.5 98 L 0 98 L 0 0 Z ")
+    //fillPath.fillType = Path.FillType.EVEN_ODD
+    val rectF = RectF()
+    fillPath.computeBounds(rectF, true)
+    val matrix = Matrix()
+    val scale = minOf( size.width / rectF.width(), size.height / rectF.height() )
+    matrix.setScale(scale, scale)
+    fillPath.transform(matrix)
+    val composePathFill = fillPath.asComposePath()
+
+    drawPath(path = composePathFill, color = Color(red = 1f, green = 0.9000000953674316f, blue = 0f, alpha = 0.6000000238418579f), style = Fill)
+    drawPath(path = composePathFill, color = Color.Transparent, style = Stroke(width = 3f, miter = 4f, join = StrokeJoin.Round))
+    }
+
+    Text(
+    text = "cadastrar Produto",
+    textAlign = TextAlign.Center,
+    fontSize = 40.sp,
+    textDecoration = TextDecoration.None,
+    letterSpacing = 0.sp,
+
+    overflow = TextOverflow.Ellipsis,
+    modifier = Modifier
+    .align(Alignment.TopStart)
+    .width(466.dp)
+
+    //.height(62.dp)
+
+    .alpha(1f),
+    color = Color(red = 0f, green = 0f, blue = 0f, alpha = 1f),
+    fontWeight = FontWeight.Normal,
+    fontStyle = FontStyle.Normal,
+    )
+
+    Box(
+    modifier = Modifier
+    .width(66.dp)
+    .height(70.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .align(Alignment.TopStart)
+
+    .background(Color.Transparent)
+    )
+
+    Text(
+    text = "dESCRIÇÃO DO PRODUTO :",
+    textAlign = TextAlign.Center,
+    fontSize = 36.sp,
+    textDecoration = TextDecoration.None,
+    letterSpacing = 0.sp,
+
+    overflow = TextOverflow.Ellipsis,
+    modifier = Modifier
+    .align(Alignment.Center)
+    .width(458.dp)
+
+    //.height(66.dp)
+
+    .alpha(1f),
+    color = Color(red = 0f, green = 0f, blue = 0f, alpha = 1f),
+    fontWeight = FontWeight.Normal,
+    fontStyle = FontStyle.Normal,
+    )
+
+    Box(
+    modifier = Modifier
+    .width(201.dp)
+    .height(161.dp)
+    .clip(RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+    .align(Alignment.TopStart)
+
+    .background(Color.Transparent)
+    )}
+

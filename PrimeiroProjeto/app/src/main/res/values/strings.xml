@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Primeiro Projeto</string>
+    <string name="Imagem_borboleta">imagem de uma borboleta</string>
+    <string name="ol_universo">Olá Universo!</string>
+</resources>
