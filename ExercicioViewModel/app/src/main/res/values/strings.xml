@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExercicioViewModel</string>
+    <string name="aperte_o_bot_o">Aperte o botão!!</string>
+    <string name="click_aqui">Click aqui</string>
+</resources>
