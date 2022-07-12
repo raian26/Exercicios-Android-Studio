@@ -26,7 +26,7 @@ class addFragment : Fragment() {
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.buttonAdd.setOnClickListener {
-           inserirnoBanco()
+           inserirProdutoBanco()
         }
         return binding.root
     }
@@ -35,10 +35,11 @@ class addFragment : Fragment() {
         return !(nome == "" || sobrenome == "" || idade == "")
     }
 
-    fun inserirnoBanco() {
+    fun inserirProdutoBanco() {
         val nome = binding.editNome.text.toString()
         val sobrenome = binding.editSobrenome.text.toString()
         val idade = binding.editIdade.text.toString()
+
 
         if (validarCampos(nome, sobrenome, idade)) {
             val user = Usuario(0, nome, sobrenome, idade.toInt())
